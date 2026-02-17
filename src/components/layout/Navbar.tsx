@@ -81,13 +81,6 @@ export function Navbar() {
                     >
                         Contact
                     </Link>
-                    <Link
-                        href="/admin"
-                        className="text-lg text-neutral-500"
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        Admin Login
-                    </Link>
                 </div>
             )}
         </nav>

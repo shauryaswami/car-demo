@@ -60,7 +60,7 @@ export function InventoryGrid({ cars, initialSearch }: { cars: Car[]; initialSea
     return (
         <div>
             {/* Filters Bar */}
-            <div className="bg-neutral-900 border border-white/5 rounded-xl p-6 mb-8 sticky top-24 z-30 shadow-xl backdrop-blur-md bg-opacity-90">
+            <div className="bg-neutral-900 border border-white/5 rounded-xl p-6 mb-8 z-30 shadow-xl backdrop-blur-md bg-opacity-90">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {/* Search */}
                     <div className="relative">

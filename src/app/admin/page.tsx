@@ -65,7 +65,7 @@ export default async function AdminDashboard() {
                         Total Value
                     </h3>
                     <p className="text-4xl font-light">
-                        $
+                        ₹
                         {cars
                             .reduce((acc, car) => acc + car.price, 0)
                             .toLocaleString('en-IN')}
