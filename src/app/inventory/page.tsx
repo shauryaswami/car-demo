@@ -6,8 +6,10 @@ export const dynamic = "force-dynamic";
 export default async function InventoryPage({
     searchParams,
 }: {
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+    const resolvedSearchParams = await searchParams;
+    const initialSearch = (resolvedSearchParams?.search as string) || "";
     // Fetch all cars for client-side filtering (dynamic and instant)
     // If thousands, we'd paginate server-side, but for "dealership" < 100 is typical.
     const cars = await prisma.car.findMany({
@@ -33,7 +35,7 @@ export default async function InventoryPage({
                     Browse our extensive inventory of premium vehicles. Use the filters to find your perfect match.
                 </p>
 
-                <InventoryGrid cars={serializedCars as any} initialSearch={searchParams?.search as string} />
+                <InventoryGrid cars={serializedCars as any} initialSearch={initialSearch} />
             </div>
         </div>
     );
